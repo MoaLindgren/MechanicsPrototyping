@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿
+#region Code Description
+//Made by Moa Lindgren, 2019-03-05
+
+//Following script handles the values that the player gives in the inputfields.
+//Later it instantiates the balancingmeter with these values.
+//Communicates with UiManager, EventManager, MeterManager, and InputHandler.
+#endregion
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

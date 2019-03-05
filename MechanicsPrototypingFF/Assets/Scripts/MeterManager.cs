@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿
+#region Code Description
+//Made by Moa Lindgren, 2019-03-05
+
+//Following script handles the referensmeter,
+//it generates random values for the referensmeter to go to.
+//Communicates with InputHandler.
+#endregion
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

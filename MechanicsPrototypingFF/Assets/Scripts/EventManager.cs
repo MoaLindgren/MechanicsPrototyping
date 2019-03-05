@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿
+#region Code Description
+//Made by Moa Lindgren, 2019-03-05
+
+//Following script handles the full game process.
+//If processmeter is full the player wins, and if loosecondition is true the playes fails.
+//Communicates with InputHandler, MeterManager nad UiManager.
+#endregion
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,9 +49,6 @@ public class EventManager : MonoBehaviour
     [SerializeField]
     int maxNbrOfFails;
     int uiOutput, countFails;
-
-
-
 
     float playerValue, referensValue, looseTimerCounter, gameTimerCounter;
     bool fill, play;

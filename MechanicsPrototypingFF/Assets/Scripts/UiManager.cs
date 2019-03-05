@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿
+#region Code Description
+//Made by Moa Lindgren, 2019-03-05
+
+//Following script handles the ui-elements in the game. For example, if there is a timer, it shows through this script.
+//Communicates with EventManager.
+#endregion
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
