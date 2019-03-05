@@ -19,17 +19,21 @@ public class InitializeGameValues : MonoBehaviour
     MeterManager meterManager;
     InputHandler inputHandler;
 
-    bool defaultValues;
     [SerializeField]
     List<GameObject> inputFields;
     [SerializeField]
-    List<float> inputValues;
+    List<float> eventManagerValues, inputManagerValues, meterManagerValues;
     [SerializeField]
     GameObject balancingSlider;
+
+    bool defaultValues;
+    float inputValue;
+
 
     void Start()
     {
         uiManager = GetComponent<UiManager>();
+
         //following needs to be set after instantiating balancingmeter, but currently it can be set from start. 
         eventManager = balancingSlider.GetComponent<EventManager>();
         meterManager = balancingSlider.GetComponent<MeterManager>();
@@ -44,33 +48,40 @@ public class InitializeGameValues : MonoBehaviour
     {
         if (!defaultValues)
         {
-            //Sätt alla scripts redigeringsbara-värden till de värden spelaren la in.
-            foreach (float value in inputValues)
-            {
-                if (value != 0)
-                {
+            //foreach (float value in inputValues)
+            //{
+            //    if (value != 0)
+            //    {
 
-                }
-                else
-                {
-                    //message to fill empty area
-                }
-            }
+            //    }
+            //    else
+            //    {
+            //        //message to fill empty area
+            //    }
+            //}
         }
         else
         {
             //Instantiate balancingmeter without any adjustments.
         }
     }
-    public void GetInput(int inputFieldIndex)
+    public void GetIndext(int inputFieldIndex)
     {
         string input = inputFields[inputFieldIndex].GetComponent<InputField>().text;
-        float inputValue;
-        if (float.TryParse(input, out inputValue))
+        float.TryParse(input, out inputValue);
+    }
+    public void GetInputField(string inputField)
+    {
+        switch (inputField)
         {
-            inputValues[inputFieldIndex] = inputValue;
-        }
+            case "ProcessMeter":
+                return;
+            case "PlayerMeter":
+                return;
+            case "ReferensMeter":
+                return;
 
+        }
     }
 
 }

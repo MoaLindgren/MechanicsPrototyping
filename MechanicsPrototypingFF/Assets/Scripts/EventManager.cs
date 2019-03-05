@@ -4,7 +4,7 @@
 
 //Following script handles the full game process.
 //If processmeter is full the player wins, and if loosecondition is true the playes fails.
-//Communicates with InputHandler, MeterManager nad UiManager.
+//Communicates with InputHandler, MeterManager and UiManager.
 #endregion
 
 using System.Collections;
@@ -130,7 +130,7 @@ public class EventManager : MonoBehaviour
                     //If the gametimer is at 0 -> player loose.
                     case 2:
                         gameTimerCounter -= Time.deltaTime;
-                        uiOutput = Mathf.RoundToInt(gameTimerCounter); //showGameTimer = true; <<<<<<< ISTÄLLET FÖR DETTA.
+                        uiOutput = Mathf.RoundToInt(gameTimerCounter);
                         uiManager.OutPutText = uiOutput.ToString();
                         if (gameTimerCounter <= 0)
                         {
@@ -157,7 +157,6 @@ public class EventManager : MonoBehaviour
                         return;
                 }
             }
-
         }
     }
     void GameOver(bool win)
