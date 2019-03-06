@@ -14,7 +14,7 @@ using UnityEngine.UI;
 
 public class EventManager : MonoBehaviour
 {
-    [Header ("Meter")]
+    [Header("Meter")]
     [SerializeField]
     Slider processMeter;
     InputHandler inputHandler;
@@ -38,6 +38,8 @@ public class EventManager : MonoBehaviour
     float gameTimer;
     [SerializeField]
     GameObject tempPlayer;
+    [SerializeField]
+    GameObject startPosition;
 
     [Header("Output info")]
     [Header("Variables needed depending on Loose Condition Index: " +
@@ -58,9 +60,7 @@ public class EventManager : MonoBehaviour
         set
         {
             play = value;
-            inputHandler.Play = this.play;
-            meterManager.Play = this.play;
-            processMeter.value = startValue;
+            ResetGame();
         }
     }
     void Start()
@@ -74,7 +74,7 @@ public class EventManager : MonoBehaviour
     }
     void Update()
     {
-        if(play)
+        if (play)
         {
             playerValue = inputHandler.MyValue;
             referensValue = meterManager.MyValue;
@@ -148,7 +148,7 @@ public class EventManager : MonoBehaviour
                             uiManager.OutPutText = uiOutput.ToString();
                             processMeter.value = startValue;
 
-                            if(countFails >= maxNbrOfFails)
+                            if (countFails >= maxNbrOfFails)
                             {
                                 GameOver(false);
                                 countFails = 0;
@@ -166,7 +166,7 @@ public class EventManager : MonoBehaviour
         inputHandler.Play = this.play;
 
         //following is where output-event can be called:
-        switch(win)
+        switch (win)
         {
             case true:
                 uiManager.OutPutText = "YOU WON";
@@ -177,5 +177,19 @@ public class EventManager : MonoBehaviour
                 tempPlayer.GetComponent<Rigidbody>().useGravity = true;
                 return;
         }
+    }
+
+    void ResetGame()
+    {
+        inputHandler.Play = this.play;
+        meterManager.Play = this.play;
+        processMeter.value = startValue;
+        tempPlayer.GetComponent<Rigidbody>().useGravity = false; //Resetting output-event
+        tempPlayer.transform.position = startPosition.transform.position;
+        fill = false;
+        countFails = 0;
+        looseTimerCounter = looseTimer;
+        gameTimerCounter = gameTimer;
+
     }
 }

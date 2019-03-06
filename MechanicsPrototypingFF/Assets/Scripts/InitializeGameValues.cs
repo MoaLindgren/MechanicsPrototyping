@@ -24,7 +24,7 @@ public class InitializeGameValues : MonoBehaviour
     [SerializeField]
     List<float> eventManagerValues, inputManagerValues, meterManagerValues;
     [SerializeField]
-    GameObject balancingSlider;
+    GameObject balancingMeter;
 
     bool defaultValues;
     float inputValue;
@@ -35,9 +35,9 @@ public class InitializeGameValues : MonoBehaviour
         uiManager = GetComponent<UiManager>();
 
         //following needs to be set after instantiating balancingmeter, but currently it can be set from start. 
-        eventManager = balancingSlider.GetComponent<EventManager>();
-        meterManager = balancingSlider.GetComponent<MeterManager>();
-        inputHandler = balancingSlider.GetComponent<InputHandler>();
+        eventManager = balancingMeter.GetComponent<EventManager>();
+        meterManager = balancingMeter.GetComponent<MeterManager>();
+        inputHandler = balancingMeter.GetComponent<InputHandler>();
     }
     public void DefaultValues()
     {
