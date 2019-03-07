@@ -19,19 +19,24 @@ public class MeterManager : MonoBehaviour
     Slider referensMeter;
     InputHandler inputHandler;
 
-    [Header("Referens-Meter, editable variables")]
-    [SerializeField]
-    float speed;
-    [SerializeField]
-    float approxValue;
-    [SerializeField]
-    float waitTime;
-    float rndValueToGo, maxValue, myValue;
+    float speed, approxValue, waitTime, rndValueToGo, maxValue, myValue;
     bool generateRandomValue, move, play;
 
     public float MyValue
     {
         get { return myValue; }
+    }
+    public float Speed
+    {
+        set { speed = value; }
+    }
+    public float ApproxValue
+    {
+        set { approxValue = value; }
+    }
+    public float WaitTime
+    {
+        set { waitTime = value; }
     }
     public bool Play
     {

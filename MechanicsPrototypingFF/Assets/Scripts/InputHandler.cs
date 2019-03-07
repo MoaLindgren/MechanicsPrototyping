@@ -16,17 +16,20 @@ public class InputHandler : MonoBehaviour
     [SerializeField]
     Slider playerMeter;
 
-    [Header("Player-Meter, editable variables")]
-    [SerializeField]
-    float meterDownSpeed;
-    [SerializeField]
-    float meterUpSpeed;
-    float myValue;
+    float meterDownSpeed, meterUpSpeed, myValue;
     bool playerInput, play;
 
     public float MyValue
     {
         get { return myValue; }
+    }
+    public float MeterDownSpeed
+    {
+        set { meterDownSpeed = value; }
+    }
+    public float MeterUpSpeed
+    {
+        set { meterUpSpeed = value; }
     }
     public bool Play
     {

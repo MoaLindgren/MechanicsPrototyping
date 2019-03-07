@@ -20,40 +20,54 @@ public class EventManager : MonoBehaviour
     InputHandler inputHandler;
     MeterManager meterManager;
     UiManager uiManager;
+    GameObject tempPlayer, startPosition;
 
-    [Header("Process-Meter, editable variables")]
-    [SerializeField]
-    float speedUp;
-    [SerializeField]
-    float speedDown;
-    [SerializeField]
-    float approxValue;
-    [SerializeField]
-    float looseTimer;
-    [SerializeField]
-    float startValue;
-
-    [Header("Game specifics")]
-    [SerializeField]
-    float gameTimer;
-    [SerializeField]
-    GameObject tempPlayer;
-    [SerializeField]
-    GameObject startPosition;
-
-    [Header("Output info")]
-    [Header("Variables needed depending on Loose Condition Index: " +
-        "1: LooseTimer. " +
-        "2: GameTimer. " +
-        "3: MaxNbrOfFails. ")]
-    [SerializeField]
-    int looseConditionIndex;
-    [SerializeField]
-    int maxNbrOfFails;
-    int uiOutput, countFails;
-
-    float playerValue, referensValue, looseTimerCounter, gameTimerCounter;
+    int looseConditionIndex, maxNbrOfFails, uiOutput, countFails;
+    float speedUp, speedDown, approxValue, looseTimer, startValue, gameTimer, playerValue, referensValue, looseTimerCounter, gameTimerCounter;
     bool fill, play;
+
+
+    public float SpeedUp
+    {
+        set { speedUp = value; }
+    }
+    public float SpeedDown
+    {
+        set { speedDown = value; }
+    }
+    public float ApproxValue
+    {
+        set { approxValue = value; }
+    }
+    public float LooseTimer
+    {
+        set { looseTimer = value; }
+    }
+    public float StartValue
+    {
+        set { startValue = value; }
+    }
+    public float GameTimer
+    {
+        set { gameTimer = value; }
+    }
+    public int LooseConditionIndex
+    {
+        set { looseConditionIndex = value; }
+    }
+    public int MaxNbrOfFails
+    {
+        set { maxNbrOfFails = value; }
+    }
+    public GameObject TempPlayer
+    {
+        set { tempPlayer = value; }
+    }
+    public GameObject StartPosition
+    {
+        set { startPosition = value; }
+    }
+
 
     public bool Play
     {

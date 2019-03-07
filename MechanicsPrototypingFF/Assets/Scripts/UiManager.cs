@@ -18,6 +18,8 @@ public class UiManager : MonoBehaviour
     Text uiText;
     [SerializeField]
     GameObject balancingMeter;
+    [SerializeField]
+    GameObject editMenu;
     EventManager eventManager;
     string outPutText;
 
@@ -34,6 +36,13 @@ public class UiManager : MonoBehaviour
     {
         eventManager = balancingMeter.GetComponent<EventManager>();
     }
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            ToggleEditMenu(true);
+        }
+    }
 
     void ShowUiText()
     {
@@ -49,5 +58,9 @@ public class UiManager : MonoBehaviour
     public void Play()
     {
         eventManager.Play = true;
+    }
+    public void ToggleEditMenu(bool open)
+    {
+        editMenu.SetActive(open);
     }
 }
