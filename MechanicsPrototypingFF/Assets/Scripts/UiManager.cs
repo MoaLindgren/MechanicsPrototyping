@@ -21,6 +21,7 @@ public class UiManager : MonoBehaviour
     [SerializeField]
     GameObject editMenu;
     EventManager eventManager;
+    TouchScreenKeyboard keyboard;
     string outPutText;
 
     public string OutPutText
@@ -53,7 +54,6 @@ public class UiManager : MonoBehaviour
     {
         uiText.gameObject.SetActive(false);
     }
-
     //called from play-button in ui, and when winning/loosing:
     public void Play()
     {

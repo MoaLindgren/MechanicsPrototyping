@@ -79,11 +79,15 @@ public class InitializeGameValues : MonoBehaviour
     bool defaultValues;
     float inputValue;
 
+    List<float> allEditableVariables;
+
     void Start()
     {
         eventManager = balancingMeter.GetComponent<EventManager>();
         meterManager = balancingMeter.GetComponent<MeterManager>();
         inputHandler = balancingMeter.GetComponent<InputHandler>();
+        allEditableVariables = new List<float>() { processmeterSpeedUp, processmeterSpeedUp };
+       // allEditableVariables.
         SetValues();
     }
 
